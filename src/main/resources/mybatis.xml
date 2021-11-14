@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 开启延迟加载（懒加载） -->
+        <setting name="lazyLoadingEnabled" value="true" />
+
+        <!-- 配置完整加载（即是否按需加载）。当启用时，对任意延迟属性的访问都会使所有延迟加载属性同时加载；
+        反之，每种属性将会按需加载，访问哪一个属性，则加载哪一个属性。默认值为true，即完整加载（不按需加载），值为false，则为按需加载 -->
+        <setting name="aggressiveLazyLoading" value="false" />
+
+        <!-- 开启二级缓存，针对dao接口方法级别的缓存。这是总开关，还需要在每一个mapper文件中使用cache节点进行配置 -->
+        <setting name="cacheEnabled" value="false" />
+
+        <!-- 输出查询语句及相关日志，logImpl属性用于指定MyBatis所用日志的具体实现，未指定时将自动检测。
+        检测顺序依次为：SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING | NO_LOGGING。
+        STDOUT_LOGGING表示输出到控制台，在整合了springmvc时，推荐选择COMMONS_LOGGING，表示使用spring-jcl进行日志记录，
+        spring对此部分进行了重写，但包名依旧沿用org.apache.commons.logging，可自动匹配日志实现，包括slf4j。
+        在取值为STDOUT_LOGGING的时候，在控制台会输出所有mybatis日志（包括查询结果集等），如果使用其它日志系统输出的话，
+        则输出数量取决于logger名称及日志级别设置 -->
+        <setting name="logImpl" value="COMMONS_LOGGING" />
+
+        <!-- logPrefix属性用于指定MyBatis增加到日志名称的前缀，配置此属性，是方便于其它日志记录插件使用。
+        value值应以点结尾，以与真正的日志名称分隔。若不指定此属性，则默认日志名称的前缀应为dao接口所在包。
+        如：dao接口为com.situ.dao.CategoryDAO，则日志名称为：com.situ.dao.CategoryDAO，若指定了以下前缀，
+        则日志名称变为mybatis.dao.com.situ.dao.CategoryDAO，此时日志插件再使用com.situ.dao作为判定输出的前缀，已经无效。
+        如果项目中的dao接口分散在不同的包里，则此属性就可派上用场，添加此配置后，即所有日志名称均以此配置值为前缀，
+        那么日志实现就可指定此虚拟的包名mybatis.dao了。注意：一旦指定使用此配置指定前缀，则日志记录插件使用默认的原始包名做前缀将失败 -->
+        <setting name="logPrefix" value="mybatis.dao." />
+
+        <!-- 在映射时，自动将下划线命名格式的字段名，映射时驼峰式的属性名 -->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+    </settings>
+
+    <!-- 批量起别名 -->
+    <typeAliases>
+        <!-- 批量自动起别名，给一个包下的所有模型类起别名，别名即类名。也可以使用typeAlias可手动给单个模型类起别名。-->
+        <package name="cn.edu.sdust.pojo" />
+    </typeAliases>
+</configuration>
