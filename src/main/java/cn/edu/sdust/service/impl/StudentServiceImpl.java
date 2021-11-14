@@ -35,7 +35,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public int updateStudent(Student student) {
+    public int updateStudent(Student student, int id) {
         return 0;
     }
 

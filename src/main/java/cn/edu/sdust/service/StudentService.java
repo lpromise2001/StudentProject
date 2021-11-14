@@ -15,6 +15,6 @@ public interface StudentService {
     //查询所有学生
     List<Student> queryAllStudent();
     //更改学生信息
-    int updateStudent(Student student);
+    int updateStudent(Student student, int id);
 
 }
