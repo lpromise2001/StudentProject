@@ -1,9 +1,11 @@
 package cn.edu.sdust.pojo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Student {
 
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private Integer id;
     private String stuId;
     private String name;
@@ -68,6 +70,16 @@ public class Student {
 
     public Date getBirthday() {
         return birthday;
+    }
+
+    //返回本地日期格式
+    public String getLocalBirthday() {
+        Date d = getBirthday();
+        if (d != null) {
+            return sdf.format(d);
+        } else {
+            return "";
+        }
     }
 
     public void setBirthday(Date birthday) {
