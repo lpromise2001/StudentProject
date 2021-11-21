@@ -50,7 +50,7 @@
         <property name="configLocation" value="classpath:mybatis.xml"/>
 
         <!-- 注意：value值配置的是路径格式，不是包格式 -->
-        <property name="mapperLocations" value="classpath:spring_dao.xml"/>
+        <property name="mapperLocations" value="classpath:spring-dao.xml"/>
 
         <!-- 配置mybatis的自动分页插件 -->
         <property name="plugins">
