@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace是命名空间的意思，dao接口的名称 -->
+<mapper namespace="cn.edu.sdust.dao.StudentDAO">
+
+    <!-- 配置结果集映射 -->
+    <resultMap id="StudentMap" type="Student">
+        <id property="id" column="id"/>
+        <result property="stuId" column="stu_id"/>
+        <result property="name" column="name"/>
+        <result property="pinyin" column="pinyin"/>
+        <result property="sex" column="sex"/>
+        <result property="birthday" column="birthday"/>
+        <result property="phone" column="phone"/>
+        <result property="qq" column="qq"/>
+        <result property="email" column="email"/>
+    </resultMap>
+
+
+
+</mapper>
